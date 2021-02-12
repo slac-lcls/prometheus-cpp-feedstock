@@ -1,13 +1,13 @@
 {% set name = "prometheus-cpp" %}
-{% set version = "0.12.1" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/jupp0r/{{ name }}/releases/download/v{{ version }}/prometheus-cpp-with-submodules.tar.gz 
-  sha256: f116cee772df7bf23fc89fb71c13ad4420601e304a382d77da725da0d0dc4cac
+  url: https://pswww.slac.stanford.edu/swdoc/tutorials/{{ name }}-{{ version }}.tar.gz
+  sha256: 2ab0bd8a1c41b381127bf7aafaaad488ce4e4f0d0b30517e0a07fb8d2d8002d2
   patches:
     - rt.patch
 
@@ -29,10 +29,10 @@ requirements:
     - libcurl
 
 about:
-  home: https://github.com/jupp0r/prometheus-cpp
+  home: https://jupp0r.github.io/prometheus-cpp
   license: MIT
   license_family: MIT
-  license_file: LICENSE.txt
+  license_file: LICENSE
   summary: 'Prometheus Client Library for Modern C++'
   description: |
     this library aims to enable Metrics-Driven
@@ -42,7 +42,7 @@ about:
     the possibility for metrics to be collected by
     Prometheus, but other push/pull collections can
     be added as plugins.
-  doc_url: https://github.com/jupp0r/prometheus-cpp
+  doc_url: https://jupp0r.github.io/prometheus-cpp
   dev_url: https://github.com/jupp0r/prometheus-cpp
 
 extra:
