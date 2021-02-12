@@ -1,0 +1,52 @@
+{% set name = "prometheus-cpp" %}
+{% set version = "0.12.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/jupp0r/{{ name }}/releases/download/v{{ version }}/prometheus-cpp-with-submodules.tar.gz 
+  sha256: f116cee772df7bf23fc89fb71c13ad4420601e304a382d77da725da0d0dc4cac
+  patches:
+    - rt.patch
+
+build:
+  skip: True  # [win or osx]
+  number: 0
+
+requirements:
+  build:
+    - cmake
+    - make
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - zlib
+    - libcurl
+  run:
+    - zlib
+    - libcurl
+
+about:
+  home: https://github.com/jupp0r/prometheus-cpp
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE.txt
+  summary: 'Prometheus Client Library for Modern C++'
+  description: |
+    this library aims to enable Metrics-Driven
+    Development for C++ services. It implements the
+    Prometheus Data Model, a powerful abstraction
+    on which to collect and expose metrics. We offer
+    the possibility for metrics to be collected by
+    Prometheus, but other push/pull collections can
+    be added as plugins.
+  doc_url: https://github.com/jupp0r/prometheus-cpp
+  dev_url: https://github.com/jupp0r/prometheus-cpp
+
+extra:
+  recipe-maintainers:
+    - valmar
+    - chrisvam
+
