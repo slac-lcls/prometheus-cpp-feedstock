@@ -1,13 +1,13 @@
 {% set name = "prometheus-cpp" %}
-{% set version = "0.9.0" %}
+{% set version = "1.12.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pswww.slac.stanford.edu/swdoc/tutorials/{{ name }}-{{ version }}.tar.gz
-  sha256: 05c56c17f261f0080bc3321f0f4a497701ee5c02e23e22b234bb69f247fd6867
+  url: https://github.com/jupp0r/{{ name }}/releases/download/vi{{ version }}/prometheus-cpp-with-submodules.tar.gz
+  sha256: f116cee772df7bf23fc89fb71c13ad4420601e304a382d77da725da0d0dc4cac
   patches:
     - rt.patch
 
