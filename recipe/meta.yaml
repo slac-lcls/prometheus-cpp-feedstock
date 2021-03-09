@@ -1,12 +1,12 @@
 {% set name = "prometheus-cpp" %}
-{% set version = "1.12.1" %}
+{% set version = "0.12.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/jupp0r/{{ name }}/releases/download/vi{{ version }}/prometheus-cpp-with-submodules.tar.gz
+  url: https://github.com/jupp0r/{{ name }}/releases/download/v{{ version }}/prometheus-cpp-with-submodules.tar.gz
   sha256: f116cee772df7bf23fc89fb71c13ad4420601e304a382d77da725da0d0dc4cac
   patches:
     - rt.patch
