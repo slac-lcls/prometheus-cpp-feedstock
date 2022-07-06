@@ -10,10 +10,11 @@ source:
   sha256: 05c56c17f261f0080bc3321f0f4a497701ee5c02e23e22b234bb69f247fd6867
   patches:
     - rt.patch
+    - limits.patch
 
 build:
   skip: True  # [win or osx]
-  number: 21
+  number: 23
 
 requirements:
   build:
